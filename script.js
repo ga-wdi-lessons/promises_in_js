@@ -1,9 +1,9 @@
-//the argument variable 'callback' is a *reference* to a function. it is then // invoked at the end of someFunction
-function someFunction(callback) {
-  let someValue = 14;
+//someValue doesn't need to be defined within someFunction, it could be passed
+//in as an argument to someFunction
+function someFunction(someValue, callback) {
   callback(someValue);
 }
 
-someFunction( value => {
+someFunction( 14, value => {
   console.log(`${value} was passed in as an arg to callback`);
 })
